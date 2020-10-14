@@ -1,0 +1,35 @@
+
+<div class="container mb-5">
+<h1 class="mt-5 text-center">Welcome to Electrified Admin Page</h1>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+      <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+        <div class="form-group">
+          <label for=""></label>
+          <input type="text"
+            class="form-control" name="carModel" id="carModel"
+             aria-describedby="hlpModel" formControlName="name" placeholder="Name">
+          <small id="hlpModel" class="form-text text-muted">Name </small>
+        </div>
+        <div class="form-group">
+          <label for=""></label>
+          <input type="password"
+            class="form-control" name="carHorsePower" id="carHorsePower"
+             aria-describedby="hlpHorsePower" formControlName="password" placeholder="Password">
+          <small id="hlpHorsePower" class="form-text text-muted">Password</small>
+        </div>
+        <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-2"><button class="btn btn-primary " type="submit" [disabled]="!form.valid">
+            Login
+          </button>
+          </div>
+          <div class="col-md-5"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

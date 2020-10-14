@@ -1,0 +1,50 @@
+<div class="container mb-5">
+  <h1 class="mt-5 text-center">Welcome to Electrified Admin Page</h1>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+      <form (ngSubmit)="onSubmit()" [formGroup]="form" >
+        <div class="form-group">
+          <label for=""></label>
+          <input type="text" class="form-control" name="name" id="name" aria-describedby="hlpModel"
+            formControlName="name" placeholder="Name">
+          <small id="hlpModel" class="form-text text-muted">Name </small>
+        </div>
+        <div class="form-group">
+          <label for=""></label>
+          <input type="text" class="form-control" name="price" id="price" aria-describedby="hlpModel"
+            formControlName="price" placeholder="Price">
+          <small id="hlpModel" class="form-text text-muted">Price </small>
+        </div>
+        <div class="form-group">
+          <label for=""></label>
+          <input type="number" class="form-control" name="quntity" id="quntity" aria-describedby="hlpModel"
+            formControlName="quntity" placeholder="Quantity">
+          <small id="hlpModel" class="form-text text-muted">Quantity</small>
+        </div>
+        <div class="form-group">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary"     id="dropdownBasic1" ngbDropdownToggle>Category</button>
+            <div ngbDropdownMenu   aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem formControlName="category" *ngFor="let item of items" value="{{item.id}}" >{{item.name}}</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for=""></label>
+          <img [src]="imageUrl"  style="width:250px;height:200px">
+          <input type="file" accept="image/*" (change)="handleFileInput($event.target.files)" class="form-control" name="uploadImage" id="uploadImage" aria-describedby="hlpModel"
+            formControlName="uploadImage" placeholder="UploadImage">
+          <small id="hlpModel" class="form-text text-muted">UploadImage</small>
+        </div>
+        <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-2"><button class="btn btn-primary mt-5" type="submit" [disabled]="!form.valid">
+              Add
+            </button></div>
+          <div class="col-md-5"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
