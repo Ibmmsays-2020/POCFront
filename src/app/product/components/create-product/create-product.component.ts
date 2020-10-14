@@ -10,12 +10,12 @@ import { ProductServicesService } from '../../../shared/services/product.service
 })
 export class CreateProductComponent implements OnInit {
   form;
-  items: Array <any>;
+  items: [];
   imageUrl = '../../../assets/img/defalut-image.jpeg';
   fileToUpload: File = null;
    constructor(private FB: FormBuilder , private productServicesService: ProductServicesService, private categoryService: CategoryService) {
    this.categoryService.Get().subscribe(
-    res => this.items = res
+    res => this.items = res,
   );
     }
 

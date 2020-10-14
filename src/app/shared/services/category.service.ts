@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CategoryService {
-  apiUrl = environment.MyAPI + 'ProductApi';
+  apiUrl = environment.MyAPI + 'CategoryApi';
 
   constructor(private http: HttpClient) { }
   Get(): Observable<any> {
